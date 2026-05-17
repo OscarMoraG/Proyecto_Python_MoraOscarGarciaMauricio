@@ -79,3 +79,37 @@ def listar_usuarios():
         pausa()
 
 
+def buscar_usuario():
+
+    datos = cargar_datos()
+
+    print("=== BUSCAR USUARIO ===")
+
+    busqueda = input("Ingrese ID, nombre o apellido: ").lower()
+
+    encontrado = False
+
+    for usuario in datos["usuarios"]:
+
+        if (
+            busqueda in usuario["id"].lower()
+            or busqueda in usuario["nombres"].lower()
+            or busqueda in usuario["apellidos"].lower()
+        ):
+
+            print(f"""
+                    ID: {usuario['id']}
+                    Nombre: {usuario['nombres']} {usuario['apellidos']}
+                    Teléfono: {usuario['telefono']}
+                    E-mail: {usuario['email']}
+                    Rol: {usuario['rol']}
+                    -----------------------------
+                    """)
+
+            encontrado = True
+
+    if not encontrado:
+        print("No se encontraron usuarios con los datos ingresados. ")
+        
+
+    pausa()

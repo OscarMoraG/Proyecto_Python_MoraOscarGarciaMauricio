@@ -19,6 +19,16 @@
             "direccion": "carrera 3",
             "password": "om123",
             "rol": "administrador"
+        },
+        {
+            "id": "1090",
+            "nombres": "maria",
+            "apellidos": "sanabria",
+            "telefono": "320",
+            "email": "yaja@acme.com",
+            "direccion": "carrera 3",
+            "password": "yaja123",
+            "rol": ""
         }
     ],
     "contactos": []
