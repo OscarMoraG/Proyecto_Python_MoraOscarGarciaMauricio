@@ -7,7 +7,8 @@ flujo principal.
 """
 
 from modules.utils import limpiar_pantalla, pausa
-from modules.crud_usuarios import registrar_usuario, listar_usuarios, buscar_usuario
+from modules.crud_usuarios import registrar_usuario, listar_usuarios, buscar_usuario, actualizar_usuario
+
 
 
 def menu_principal(usuario):
@@ -46,7 +47,8 @@ def menu_principal(usuario):
                     print("1. Registrar usuario")
                     print("2. Listar usuarios")
                     print("3. Buscar usuario")
-                    print("4. Volver")
+                    print("4. Actualizar usuario")
+                    print("5. Volver")
 
                     opcion_usuario = input("Seleccione una opcion: ")
 
@@ -58,6 +60,12 @@ def menu_principal(usuario):
 
                     elif opcion_usuario == "3":
                         buscar_usuario()
+                        break
+
+                    elif opcion_usuario == "4":
+                        actualizar_usuario()
+
+                    elif opcion_usuario == "5":
                         break
 
                     else:

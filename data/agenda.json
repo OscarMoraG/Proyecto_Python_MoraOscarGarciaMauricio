@@ -12,17 +12,17 @@
         },
         {
             "id": "1093",
-            "nombres": "oscar",
+            "nombres": "oscar mauricio",
             "apellidos": "mora",
             "telefono": "350",
             "email": "om@acme.com",
             "direccion": "carrera 3",
             "password": "om123",
-            "rol": "administrador"
+            "rol": ""
         },
         {
             "id": "1090",
-            "nombres": "maria",
+            "nombres": "maria y",
             "apellidos": "sanabria",
             "telefono": "320",
             "email": "yaja@acme.com",

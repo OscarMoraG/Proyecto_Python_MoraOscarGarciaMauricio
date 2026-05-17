@@ -110,6 +110,56 @@ def buscar_usuario():
 
     if not encontrado:
         print("No se encontraron usuarios con los datos ingresados. ")
-        
 
+
+    pausa()
+
+def actualizar_usuario():
+
+    datos = cargar_datos()
+
+    print("=== ACTUALIZAR USUARIO ===")
+
+    id_usuario = input("Ingrese el ID del usuario a actualizar: ")
+
+    for usuario in datos["usuarios"]:
+
+        if usuario["id"] == id_usuario:
+
+            print(" Usuario Encontrado. ")
+
+            nuevo_nombre = input(f"Nombres ({usuario['nombres']}): ")
+            if nuevo_nombre != "":
+                usuario["nombres"] = nuevo_nombre
+
+            nuevo_apellido = input(f"Apellidos ({usuario['apellidos']}): ")
+            if nuevo_apellido != "":
+                usuario["apellidos"] = nuevo_apellido
+
+            nuevo_telefono = input(f"Teléfono ({usuario['telefono']}): ")
+            if nuevo_telefono != "":
+                usuario["telefono"] = nuevo_telefono
+
+            nuevo_email = input(f"E-mail ({usuario['email']}): ")
+            if nuevo_email != "":
+                usuario["email"] = nuevo_email
+
+            nueva_direccion = input(f"Dirección ({usuario['direccion']}): ")
+            if nueva_direccion != "":
+                usuario["direccion"] = nueva_direccion
+
+            nuevo_rol = input(f"Rol ({usuario['rol']}): ")
+            if nuevo_rol != "":
+                usuario["rol"] = nuevo_rol
+
+            nuevo_password = input("Nueva contraseña: ")
+            if nuevo_password != "":
+                usuario["password"] = nuevo_password
+
+            guardar_datos(datos)
+
+            print(" Usuario actualizado con éxito. ")
+            pausa()
+            return
+    print(" No se encontró un usuario con el ID ingresado. ")
     pausa()
