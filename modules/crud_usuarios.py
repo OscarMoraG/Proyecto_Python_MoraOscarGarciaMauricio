@@ -64,20 +64,36 @@ def listar_usuarios():
 
     datos = cargar_datos()
 
-    print("\n=== LISTA DE USUARIOS ===")
+    print("Lista de usuarios")
+    print("-" * 120)
+
+    print(
+        f"{'ID':<10}"
+        f"{'Nombre completo':<30}"
+        f"{'Telefono':<20}"
+        f"{'E-mail':<35}"
+        f"{'Rol':<10}"
+    )
+
+    print("-" * 120)
 
     for usuario in datos["usuarios"]:
 
-        print(f"""
-                ID: {usuario['id']}
-                Nombre: {usuario['nombres']} {usuario['apellidos']}
-                Teléfono: {usuario['telefono']}
-                E-mail: {usuario['email']}
-                Rol: {usuario['rol']}
-                -----------------------------
-                """)
-        pausa()
+        nombre_completo = (
+            f"{usuario['nombres']} {usuario['apellidos']}"
+        )
 
+        print(
+            f"{usuario['id']:<10}"
+            f"{nombre_completo:<30}"
+            f"{usuario['telefono']:<20}"
+            f"{usuario['email']:<35}"
+            f"{usuario['rol']:<10}"
+        )
+
+    print("-" * 120)
+
+    pausa()
 
 def buscar_usuario():
 
@@ -207,10 +223,6 @@ def eliminar_usuario():
         else:
             print("Eliminación cancelada.")
     else:
-        print("Usuario no encontrado.")
-
-    pausa()
-
+        print("Usuario no encontrado.")        
         
-        
-
+        pausa()

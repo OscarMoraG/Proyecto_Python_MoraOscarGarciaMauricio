@@ -9,6 +9,8 @@ flujo principal.
 from modules.utils import limpiar_pantalla, pausa
 from modules.crud_usuarios import registrar_usuario, listar_usuarios
 from modules.crud_usuarios import buscar_usuario, actualizar_usuario, eliminar_usuario
+from modules.crud_contactos import registrar_contacto, listar_contactos, buscar_contacto
+
 
 
 
@@ -78,8 +80,35 @@ def menu_principal(usuario):
                         pausa()
         # ===== GESTIÓN DE CONTACTOS =====
         elif opcion == "2":
-                print("\nMódulo de contactos en construcción")
-                pausa()
+
+            while True:
+
+                limpiar_pantalla()
+
+                print("=== GESTIÓN DE CONTACTOS ===")
+
+                print("1. Registrar contacto")
+                print("2. Listar contactos")
+                print("3. Buscar contacto")
+                print("4. Volver")
+
+                opcion_contacto = input("Seleccione una opción: ")
+
+                if opcion_contacto == "1":
+                    registrar_contacto()
+
+                elif opcion_contacto == "2":
+                    listar_contactos()
+
+                elif opcion_contacto == "3":
+                    buscar_contacto()
+
+                elif opcion_contacto == "4":
+                    break
+
+                else:
+                    print("Opción inválida")
+                    pausa()
 
         # ===== CERRAR SESIÓN =====
 

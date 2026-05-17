@@ -31,5 +31,26 @@
             "rol": ""
         }
     ],
-    "contactos": []
+    "contactos": [
+        {
+            "id": "c1",
+            "nombres": "juan",
+            "apellidos": "mora",
+            "telefono": "320",
+            "email": "juan@acme.com",
+            "direccion": "carrera 3",
+            "tipo_contacto": "cliente",
+            "notas": "primer contecto de prueba"
+        },
+        {
+            "id": "c2",
+            "nombres": "ana",
+            "apellidos": "mora",
+            "telefono": "320",
+            "email": "ana@acme.com",
+            "direccion": "carrera 3",
+            "tipo_contacto": "aliado",
+            "notas": "segundo contacto de prueba"
+        }
+    ]
 }
