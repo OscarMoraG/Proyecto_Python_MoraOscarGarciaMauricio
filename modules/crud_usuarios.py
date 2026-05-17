@@ -163,3 +163,54 @@ def actualizar_usuario():
             return
     print(" No se encontró un usuario con el ID ingresado. ")
     pausa()
+
+def eliminar_usuario():
+
+    datos = cargar_datos()
+
+    print("=== ELIMINAR USUARIO ===")
+
+    id_usuario = input("Ingrese el ID del usuario a eliminar: ")
+
+    usuario_encontrado = None
+
+    #RECORRER USUARIOS
+    
+    for usuario in datos["usuarios"]:
+
+        if usuario["id"] == id_usuario:
+            usuario_encontrado = usuario
+            break
+
+    # VALIDAR SI EXISTE EL USUARIO
+
+    if usuario_encontrado:
+        
+        print(f"""
+                Usuario encontrado:
+
+                ID: {usuario_encontrado['id']}
+                Nombre: {usuario_encontrado['nombres']} {usuario_encontrado['apellidos']}
+                E-mail: {usuario_encontrado['email']}
+                Rol: {usuario_encontrado['rol']}
+                """)
+        
+        confirmacion = input("¿Está seguro que desea eliminar este usuario? (s/n): ").lower()
+
+        if confirmacion == "s":
+
+            datos["usuarios"].remove(usuario_encontrado)
+
+            guardar_datos(datos)
+
+            print("Usuario eliminado con éxito.")
+        else:
+            print("Eliminación cancelada.")
+    else:
+        print("Usuario no encontrado.")
+
+    pausa()
+
+        
+        
+
