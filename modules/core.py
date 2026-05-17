@@ -10,7 +10,7 @@ from modules.utils import limpiar_pantalla, pausa
 from modules.crud_usuarios import registrar_usuario, listar_usuarios
 from modules.crud_usuarios import buscar_usuario, actualizar_usuario, eliminar_usuario
 from modules.crud_contactos import registrar_contacto, listar_contactos, buscar_contacto
-
+from modules.crud_contactos import  actualizar_contacto, eliminar_contacto
 
 
 
@@ -90,7 +90,9 @@ def menu_principal(usuario):
                 print("1. Registrar contacto")
                 print("2. Listar contactos")
                 print("3. Buscar contacto")
-                print("4. Volver")
+                print("4. Actualizar contacto")
+                print("5. Eliminar contacto")
+                print("6. Volver")
 
                 opcion_contacto = input("Seleccione una opción: ")
 
@@ -104,6 +106,12 @@ def menu_principal(usuario):
                     buscar_contacto()
 
                 elif opcion_contacto == "4":
+                    actualizar_contacto()
+
+                elif opcion_contacto == "5":
+                    eliminar_contacto()
+
+                elif opcion_contacto == "6":
                     break
 
                 else:

@@ -137,3 +137,113 @@ def buscar_contacto():
     print("-" * 120)
 
     pausa()
+
+def actualizar_contacto():
+
+    datos = cargar_datos()
+
+    print("=== ACTUALIZAR CONTACTO ===")
+
+    id_contacto = input("Ingrese el ID del contacto: ")
+
+    for contacto in datos["contactos"]:
+
+        if contacto["id"] == id_contacto:
+
+            print("Contacto encontrado")
+
+            nuevo_nombre = input(
+                f"Nombres ({contacto['nombres']}): "
+            )
+            if nuevo_nombre != "":
+                contacto["nombres"] = nuevo_nombre
+
+            nuevo_apellido = input(
+                f"Apellidos ({contacto['apellidos']}): "
+            )
+            if nuevo_apellido != "":
+                contacto["apellidos"] = nuevo_apellido
+
+            nuevo_telefono = input(
+                f"Teléfono ({contacto['telefono']}): "
+            )
+            if nuevo_telefono != "":
+                contacto["telefono"] = nuevo_telefono
+
+            nuevo_email = input(
+                f"E-mail ({contacto['email']}): "
+            )
+            if nuevo_email != "":
+                contacto["email"] = nuevo_email
+
+            nueva_direccion = input(
+                f"Dirección ({contacto['direccion']}): "
+            )
+            if nueva_direccion != "":
+                contacto["direccion"] = nueva_direccion
+
+            nuevo_tipo = input(
+                f"Tipo de contacto ({contacto['tipo_contacto']}): "
+            )
+            if nuevo_tipo != "":
+                contacto["tipo_contacto"] = nuevo_tipo
+
+            nuevas_notas = input(
+                f"Notas ({contacto['notas']}): "
+            )
+            if nuevas_notas != "":
+                contacto["notas"] = nuevas_notas
+
+            guardar_datos(datos)
+
+            print("Contacto actualizado correctamente")
+            pausa()
+            return
+
+    print("Contacto no encontrado")
+    pausa()
+
+def eliminar_contacto():
+
+    datos = cargar_datos()
+
+    print("=== ELIMINAR CONTACTO ===")
+
+    id_contacto = input("Ingrese el ID del contacto a eliminar: ")
+
+    contacto_encontrado = None
+
+    for contacto in datos["contactos"]:
+
+        if contacto["id"] == id_contacto:
+            contacto_encontrado = contacto
+            break
+
+    if contacto_encontrado:
+
+        print(f"""
+                Contacto encontrado:
+
+                ID: {contacto_encontrado['id']}
+                Nombre: {contacto_encontrado['nombres']} {contacto_encontrado['apellidos']}
+                E-mail: {contacto_encontrado['email']}
+                Tipo: {contacto_encontrado['tipo_contacto']}
+                """)
+
+        confirmacion = input("¿Está seguro de eliminar este contacto? (s/n): "      ).lower()
+
+        if confirmacion == "s":
+
+            datos["contactos"].remove(contacto_encontrado)
+
+            guardar_datos(datos)
+
+            print("\nContacto eliminado correctamente")
+
+        else:
+            print("\nEliminación cancelada")
+
+    else:
+        print("\nContacto no encontrado")
+
+    pausa()
