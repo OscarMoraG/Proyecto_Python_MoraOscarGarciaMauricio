@@ -1,7 +1,9 @@
-cargar_datos()
+"""
+Función
+Guardar funciones reutilizables como:
 
-guardar_datos(datos)
-
-limpiar_pantalla()
-
-pausar()
+leer JSON,
+guardar JSON,
+limpiar pantalla,
+pausas.
+"""
