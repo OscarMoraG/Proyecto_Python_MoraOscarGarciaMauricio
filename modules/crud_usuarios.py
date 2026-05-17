@@ -1,15 +1,5 @@
-"""
-Función
 
-Contendrá el CRUD de usuarios:
-
-Crear
-Leer
-Actualizar
-Eliminar
-"""
-
-from modules.utils import cargar_datos   #desde utils llama cargar_datos para leer el JSON
+from modules.utils import cargar_datos, guardar_datos, pausa
 
 
 def iniciar_sesion(email, password):
@@ -22,3 +12,70 @@ def iniciar_sesion(email, password):
             return usuario
 
     return None
+
+def registrar_usuario():
+
+    datos = cargar_datos()
+
+    print("=== Registro de Usuario ===")
+
+    id_usuario = input("Identificacion: ")
+
+    for usuario in datos ["usuarios"]:
+        if usuario["id"] == id_usuario:
+            print("El ID ya existe. Por favor, elige otro.")
+            pausa()
+            return
+        
+    email = input("E-mail coorporativo: ")
+
+    for usuario in datos["usuarios"]:
+        if usuario["email"] == email:
+            print("El e-mail ya esta registrado. ")
+            pausa()
+            return
+        
+    nombres = input("Nombres: ")
+    apellidos = input("Apellidos: ")
+    telefono = input("Teléfono: ")
+    direccion = input("Dirección: ")
+    rol = input("Rol: ")
+    password = input("Contraseña: ")
+            
+    nuevo_usuario = {
+        "id": id_usuario,
+        "nombres": nombres,
+        "apellidos": apellidos,
+        "telefono": telefono,
+        "email": email,
+        "direccion": direccion,
+        "password": password,
+        "rol": rol
+    } 
+
+    datos["usuarios"].append(nuevo_usuario)
+
+    guardar_datos(datos)
+
+    print("Usuario registrado con éxito.")
+    pausa()
+
+def listar_usuarios():
+
+    datos = cargar_datos()
+
+    print("\n=== LISTA DE USUARIOS ===")
+
+    for usuario in datos["usuarios"]:
+
+        print(f"""
+                ID: {usuario['id']}
+                Nombre: {usuario['nombres']} {usuario['apellidos']}
+                Teléfono: {usuario['telefono']}
+                E-mail: {usuario['email']}
+                Rol: {usuario['rol']}
+                -----------------------------
+                """)
+        pausa()
+
+

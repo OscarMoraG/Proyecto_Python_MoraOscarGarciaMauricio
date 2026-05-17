@@ -1,16 +1,25 @@
 {
-  "usuarios": [
-    {
-      "id": "0000",
-      "nombres": "Admin",
-      "apellidos": "Administrador",
-      "telefono": "555 000111",
-      "email": "admin@acmesolutions.com",
-      "direccion": "Cl 185 # 26 – 85",
-      "password": "admin123",
-      "rol": "admin"
-    }
-  ],
-  "contactos": []
+    "usuarios": [
+        {
+            "id": "0000",
+            "nombres": "Admin",
+            "apellidos": "Administrador",
+            "telefono": "555 000111",
+            "email": "admin@acmesolutions.com",
+            "direccion": "Cl 185 # 26 – 85",
+            "password": "admin123",
+            "rol": "admin"
+        },
+        {
+            "id": "1093",
+            "nombres": "oscar",
+            "apellidos": "mora",
+            "telefono": "350",
+            "email": "om@acme.com",
+            "direccion": "carrera 3",
+            "password": "om123",
+            "rol": "administrador"
+        }
+    ],
+    "contactos": []
 }
-

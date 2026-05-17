@@ -7,6 +7,8 @@ flujo principal.
 """
 
 from modules.utils import limpiar_pantalla, pausa
+from modules.crud_usuarios import registrar_usuario, listar_usuarios
+
 
 def menu_principal(usuario):
 
@@ -26,24 +28,59 @@ def menu_principal(usuario):
 
         opcion = input("Seleccione una opción: ")
 
-        if opcion == '1':
-            print("Modulo de usuarios en construccion")
-            pausa()
+        # ===== GESTIÓN DE USUARIOS =====
 
-        elif opcion == '2':
-            print("Modulo de contactos en construccion")
-            pausa()
+        if opcion == "1":
 
-        elif opcion == '3':
-            print("Cerrando sesión...")
-            pausa()
-            break
+                if usuario["rol"] != "admin":
+                    print("Aceso no permitido. Solo los administradores pueden acceder a esta sección.")
+                    pausa ()
+                    continue
 
-        elif opcion == '4':
-            print("Saliendo del programa...")
-            pausa()
-            exit()
+                while True:
+
+                    limpiar_pantalla()
+
+                    print("=== GESTIÓN DE USUARIOS ===")
+
+                    print("1. Registrar usuario")
+                    print("2. Listar usuarios")
+                    print("3. Volver")
+
+                    opcion_usuario = input("Seleccione una opcion: ")
+
+                    if opcion_usuario == "1":
+                        registrar_usuario()
+
+                    elif opcion_usuario == "2":
+                        listar_usuarios()
+
+                    elif opcion_usuario == "3":
+                        break
+
+                    else:
+                        print("Opción inválida")
+                        pausa()
+        # ===== GESTIÓN DE CONTACTOS =====
+        elif opcion == "2":
+                print("\nMódulo de contactos en construcción")
+                pausa()
+
+        # ===== CERRAR SESIÓN =====
+
+        elif opcion == "3":
+                print("\nCerrando sesión...")
+                pausa()
+                break
+
+        # ===== SALIR =====
+
+        elif opcion == "4":
+                print("\nSaliendo del sistema...")
+                exit()
+
+        # ===== OPCIÓN INVÁLIDA =====
 
         else:
-            print("Opcion invalida")
-            pausa()
+                print("\nOpción inválida")
+                pausa()
