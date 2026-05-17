@@ -5,11 +5,23 @@ Iniciar el programa,
 mostrar login,
 ejecutar el menú principal.
 """
-print("Sistema iniciado correctamente")
+from modules.crud_usuarios import iniciar_sesion  
 
-from modules.utils import cargar_datos
+print("=== SISTEMA DE CONTACTOS ACME ===")
 
-datos = cargar_datos()
+email= input("Ingrese su email: ")
+contraseña = input("Ingrese su contraseña: ")
 
-print(datos)
+usuario = iniciar_sesion(email, contraseña)   
+
+if usuario:
+    print(f"\nBienvenido {usuario['nombres']} {usuario['apellidos']}")
+
+else:
+    print("\nEmail o contraseña incorrectos. Intente nuevamente.")
+
+
+
+
+
 
