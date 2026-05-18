@@ -1,14 +1,27 @@
 
 from modules.utils import cargar_datos, guardar_datos, pausa
 
+from modules.utils import cargar_datos, guardar_datos, pausa
+
 
 def iniciar_sesion(email, password):
 
-    datos = cargar_datos()     #leer datos del JSON
+    datos = cargar_datos()
 
-    for usuario in datos["usuarios"]:   #Recorrer la lista de usuarios
+    for usuario in datos["usuarios"]:
 
-        if usuario["email"] == email and usuario["password"] == password:      #valida si el email y password coinciden con los datos del JSON
+        if usuario["email"] == email and usuario["password"] == password:
+            return usuario
+
+    return None
+
+def buscar_email(email):
+
+    datos = cargar_datos()
+
+    for usuario in datos["usuarios"]:
+
+        if usuario["email"] == email:
             return usuario
 
     return None
@@ -92,41 +105,6 @@ def listar_usuarios():
         )
 
     print("-" * 120)
-
-    pausa()
-
-def buscar_usuario():
-
-    datos = cargar_datos()
-
-    print("=== BUSCAR USUARIO ===")
-
-    busqueda = input("Ingrese ID, nombre o apellido: ").lower()
-
-    encontrado = False
-
-    for usuario in datos["usuarios"]:
-
-        if (
-            busqueda in usuario["id"].lower()
-            or busqueda in usuario["nombres"].lower()
-            or busqueda in usuario["apellidos"].lower()
-        ):
-
-            print(f"""
-                    ID: {usuario['id']}
-                    Nombre: {usuario['nombres']} {usuario['apellidos']}
-                    Teléfono: {usuario['telefono']}
-                    E-mail: {usuario['email']}
-                    Rol: {usuario['rol']}
-                    -----------------------------
-                    """)
-
-            encontrado = True
-
-    if not encontrado:
-        print("No se encontraron usuarios con los datos ingresados. ")
-
 
     pausa()
 

@@ -15,7 +15,7 @@ RUTA_ARCHIVO = "data/agenda.json"
 
 def cargar_datos():
     with open(RUTA_ARCHIVO, "r", encoding="utf-8") as archivo:
-       datos = json.load(archivo)
+        datos = json.load(archivo)
     return datos
 
 def guardar_datos(datos):

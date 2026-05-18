@@ -5,26 +5,33 @@ Iniciar el programa,
 mostrar login,
 ejecutar el menú principal.
 """
-from modules.crud_usuarios import iniciar_sesion
+from modules.crud_usuarios import iniciar_sesion, buscar_email
 from modules.core import menu_principal
 
 while True:
 
     print("=== SISTEMA DE CONTACTOS ACME ===")
-
+    print("=================================")
     email = input("Ingrese su e-mail: ")
+
+    usuario_encontrado = buscar_email(email)
+
+    if not usuario_encontrado:
+        print("El correo no existe")
+        continue
+
     password = input("Ingrese su contraseña: ")
 
     usuario = iniciar_sesion(email, password)
 
     if usuario:
-        print(f"\nBienvenido {usuario['nombres']} {usuario['apellidos']}")
+
+        print(f"Bienvenido {usuario['nombres']} {usuario['apellidos']}")
 
         menu_principal(usuario)
 
     else:
-        print("\nCredenciales incorrectas")
-
+        print("Contraseña incorrecta")
 
 
 

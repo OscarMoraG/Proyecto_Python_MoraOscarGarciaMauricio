@@ -31,14 +31,14 @@
             "rol": ""
         },
         {
-            "id": "",
-            "nombres": "",
-            "apellidos": "",
-            "telefono": "",
-            "email": "",
-            "direccion": "",
-            "password": "",
-            "rol": ""
+            "id": "1090368776",
+            "nombres": "maya",
+            "apellidos": "mora",
+            "telefono": "555",
+            "email": "maya@acme.com",
+            "direccion": "carrera 13",
+            "password": "maya123",
+            "rol": "usuario"
         }
     ],
     "contactos": [
@@ -54,9 +54,9 @@
         },
         {
             "id": "c2",
-            "nombres": "ana",
-            "apellidos": "mora",
-            "telefono": "320",
+            "nombres": "Ana",
+            "apellidos": "Mora",
+            "telefono": "3200",
             "email": "ana@acme.com",
             "direccion": "carrera 3",
             "tipo_contacto": "aliado",
