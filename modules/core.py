@@ -11,7 +11,7 @@ from modules.crud_usuarios import registrar_usuario, listar_usuarios
 from modules.crud_usuarios import actualizar_usuario, eliminar_usuario
 from modules.crud_contactos import registrar_contacto, listar_contactos, buscar_contacto
 from modules.crud_contactos import  actualizar_contacto, eliminar_contacto
-
+from modules.messages import OPCION_INVALIDA, ACCESO_DENEGADO
 
 
 def menu_principal(usuario):
@@ -24,7 +24,7 @@ def menu_principal(usuario):
         print(f"Usuario: {usuario['nombres']} {usuario['apellidos']}")
         print(f"Rol: {usuario['rol']}")
 
-        print("\n--- MENÚ PRINCIPAL ---")
+        print("--- MENÚ PRINCIPAL ---")
         print("1. Gestión de usuarios")
         print("2. Gestión de contactos")
         print("3. Cerrar sesión")
@@ -37,7 +37,7 @@ def menu_principal(usuario):
         if opcion == "1":
 
                 if usuario["rol"] != "admin":
-                    print("Aceso no permitido. Solo los administradores pueden acceder a esta sección.")
+                    print(ACCESO_DENEGADO)
                     pausa ()
                     continue
 
@@ -71,7 +71,7 @@ def menu_principal(usuario):
                         break
 
                     else:
-                        print("Opción inválida")
+                        print(OPCION_INVALIDA)
                         pausa()
         # ===== GESTIÓN DE CONTACTOS =====
         elif opcion == "2":
@@ -110,7 +110,7 @@ def menu_principal(usuario):
                     break
 
                 else:
-                    print("Opción inválida")
+                    print(OPCION_INVALIDA)
                     pausa()
 
         # ===== CERRAR SESIÓN =====
@@ -129,5 +129,5 @@ def menu_principal(usuario):
         # ===== OPCIÓN INVÁLIDA =====
 
         else:
-                print("\nOpción inválida")
+                print(OPCION_INVALIDA)
                 pausa()

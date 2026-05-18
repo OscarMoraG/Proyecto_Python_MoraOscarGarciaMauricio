@@ -7,11 +7,12 @@ ejecutar el menú principal.
 """
 from modules.crud_usuarios import iniciar_sesion, buscar_email
 from modules.core import menu_principal
+from modules.messages import BIENVENIDA, ERROR_LOGIN
 
 while True:
 
-    print("=== SISTEMA DE CONTACTOS ACME ===")
-    print("=================================")
+    print(BIENVENIDA)
+    
     email = input("Ingrese su e-mail: ")
 
     usuario_encontrado = buscar_email(email)
@@ -31,7 +32,7 @@ while True:
         menu_principal(usuario)
 
     else:
-        print("Contraseña incorrecta")
+        print(ERROR_LOGIN)
 
 
 
