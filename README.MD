@@ -6,15 +6,15 @@ Este proyecto consiste en el desarrollo de un sistema de gestión de contactos r
 
 El sistema permite administrar usuarios y contactos de manera organizada, centralizada y persistente utilizando archivos JSON como almacenamiento de datos.
 
-El programa fue desarrollado siguiendo una arquitectura modular y aplicando conceptos básicos de programación como:
+El programa fue desarrollado aplicando conceptos fundamentales de programación como:
 
 - funciones
 - ciclos
 - condicionales
 - listas
 - diccionarios
-- persistencia de datos
 - modularización
+- persistencia de datos
 - CRUD
 - manejo de archivos JSON
 
@@ -25,12 +25,12 @@ El programa fue desarrollado siguiendo una arquitectura modular y aplicando conc
 Permitir que los empleados de la empresa puedan:
 
 - iniciar sesión
-- registrar usuarios del sistema
-- administrar contactos
+- administrar usuarios
+- gestionar contactos
 - consultar información
-- actualizar datos
-- eliminar registros
-- mantener la información guardada incluso después de cerrar el programa
+- actualizar registros
+- eliminar información
+- mantener persistencia de datos
 
 ---
 
@@ -38,7 +38,7 @@ Permitir que los empleados de la empresa puedan:
 
 ## Sistema de Login
 
-El programa inicia solicitando:
+El sistema inicia solicitando:
 
 - correo corporativo
 - contraseña
@@ -53,13 +53,14 @@ El sistema permite:
 
 - Registrar usuarios
 - Listar usuarios
-- Buscar usuarios
 - Actualizar usuarios
 - Eliminar usuarios
 
-### Restricción de seguridad
+### Control de roles
 
-Solo los usuarios con rol `admin` pueden acceder al módulo de gestión de usuarios.
+Solo los usuarios con rol `admin` pueden visualizar y acceder al módulo de gestión de usuarios.
+
+Los usuarios con otros roles únicamente pueden acceder al módulo de contactos.
 
 ---
 
@@ -73,7 +74,7 @@ El sistema permite:
 - Actualizar contactos
 - Eliminar contactos
 
-Los contactos pueden clasificarse por tipo:
+Los contactos pueden clasificarse por categorías como:
 
 - cliente
 - proveedor
