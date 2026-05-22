@@ -5,7 +5,7 @@ Iniciar el programa,
 mostrar login,
 ejecutar el menú principal.
 """
-from modules.crud_usuarios import iniciar_sesion, buscar_email
+from modules.crud_user import iniciar_sesion, buscar_email
 from modules.core import menu_principal
 from modules.messages import BIENVENIDA, ERROR_LOGIN
 

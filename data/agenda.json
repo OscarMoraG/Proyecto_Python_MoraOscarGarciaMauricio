@@ -28,7 +28,7 @@
             "email": "yaja@acme.com",
             "direccion": "carrera 3",
             "password": "yaja123",
-            "rol": ""
+            "rol": "user"
         },
         {
             "id": "1090368776",
@@ -38,7 +38,17 @@
             "email": "maya@acme.com",
             "direccion": "carrera 13",
             "password": "maya123",
-            "rol": "usuario"
+            "rol": "user"
+        },
+        {
+            "id": "1092",
+            "nombres": "freddy",
+            "apellidos": "dekg",
+            "telefono": "1233",
+            "email": "fre@acme.com",
+            "direccion": "fgf",
+            "password": "123456",
+            "rol": "user"
         }
     ],
     "contactos": [

@@ -1,17 +1,21 @@
-"""
-Función
-Controlar:
-menús,
-navegación,
-flujo principal.
-"""
-
 from modules.utils import limpiar_pantalla, pausa
-from modules.crud_usuarios import registrar_usuario, listar_usuarios
-from modules.crud_usuarios import actualizar_usuario, eliminar_usuario
-from modules.crud_contactos import registrar_contacto, listar_contactos, buscar_contacto
-from modules.crud_contactos import  actualizar_contacto, eliminar_contacto
-from modules.messages import OPCION_INVALIDA, ACCESO_DENEGADO
+
+from modules.crud_user import (
+    registrar_usuario,
+    listar_usuarios,
+    actualizar_usuario,
+    eliminar_usuario
+)
+
+from modules.crud_contact import (
+    registrar_contacto,
+    listar_contactos,
+    buscar_contacto,
+    actualizar_contacto,
+    eliminar_contacto
+)
+
+from modules.messages import OPCION_INVALIDA
 
 
 def menu_principal(usuario):
@@ -24,22 +28,22 @@ def menu_principal(usuario):
         print(f"Usuario: {usuario['nombres']} {usuario['apellidos']}")
         print(f"Rol: {usuario['rol']}")
 
-        print("--- MENÚ PRINCIPAL ---")
-        print("1. Gestión de usuarios")
-        print("2. Gestión de contactos")
-        print("3. Cerrar sesión")
-        print("4. Salir")
+        print("\n--- MENÚ PRINCIPAL ---")
 
-        opcion = input("Seleccione una opción: ")
+        # ===== MENÚ ADMIN =====
 
-        # ===== GESTIÓN DE USUARIOS =====
+        if usuario["rol"] == "admin":
 
-        if opcion == "1":
+            print("1. Gestión de usuarios")
+            print("2. Gestión de contactos")
+            print("3. Cerrar sesión")
+            print("4. Salir")
 
-                if usuario["rol"] != "admin":
-                    print(ACCESO_DENEGADO)
-                    pausa ()
-                    continue
+            opcion = input("\nSeleccione una opción: ")
+
+            # ===== GESTIÓN DE USUARIOS =====
+
+            if opcion == "1":
 
                 while True:
 
@@ -53,7 +57,7 @@ def menu_principal(usuario):
                     print("4. Eliminar usuario")
                     print("5. Volver")
 
-                    opcion_usuario = input("Seleccione una opcion: ")
+                    opcion_usuario = input("\nSeleccione una opción: ")
 
                     if opcion_usuario == "1":
                         registrar_usuario()
@@ -73,61 +77,129 @@ def menu_principal(usuario):
                     else:
                         print(OPCION_INVALIDA)
                         pausa()
-        # ===== GESTIÓN DE CONTACTOS =====
-        elif opcion == "2":
 
-            while True:
+            # ===== GESTIÓN DE CONTACTOS =====
 
-                limpiar_pantalla()
+            elif opcion == "2":
 
-                print("=== GESTIÓN DE CONTACTOS ===")
+                while True:
 
-                print("1. Registrar contacto")
-                print("2. Listar contactos")
-                print("3. Buscar contacto")
-                print("4. Actualizar contacto")
-                print("5. Eliminar contacto")
-                print("6. Volver")
+                    limpiar_pantalla()
 
-                opcion_contacto = input("Seleccione una opción: ")
+                    print("=== GESTIÓN DE CONTACTOS ===")
 
-                if opcion_contacto == "1":
-                    registrar_contacto()
+                    print("1. Registrar contacto")
+                    print("2. Listar contactos")
+                    print("3. Buscar contacto")
+                    print("4. Actualizar contacto")
+                    print("5. Eliminar contacto")
+                    print("6. Volver")
 
-                elif opcion_contacto == "2":
-                    listar_contactos()
+                    opcion_contacto = input("\nSeleccione una opción: ")
 
-                elif opcion_contacto == "3":
-                    buscar_contacto()
+                    if opcion_contacto == "1":
+                        registrar_contacto()
 
-                elif opcion_contacto == "4":
-                    actualizar_contacto()
+                    elif opcion_contacto == "2":
+                        listar_contactos()
 
-                elif opcion_contacto == "5":
-                    eliminar_contacto()
+                    elif opcion_contacto == "3":
+                        buscar_contacto()
 
-                elif opcion_contacto == "6":
-                    break
+                    elif opcion_contacto == "4":
+                        actualizar_contacto()
 
-                else:
-                    print(OPCION_INVALIDA)
-                    pausa()
+                    elif opcion_contacto == "5":
+                        eliminar_contacto()
 
-        # ===== CERRAR SESIÓN =====
+                    elif opcion_contacto == "6":
+                        break
 
-        elif opcion == "3":
+                    else:
+                        print(OPCION_INVALIDA)
+                        pausa()
+
+            # ===== CERRAR SESIÓN =====
+
+            elif opcion == "3":
                 print("\nCerrando sesión...")
                 pausa()
                 break
 
-        # ===== SALIR =====
+            # ===== SALIR =====
 
-        elif opcion == "4":
+            elif opcion == "4":
                 print("\nSaliendo del sistema...")
                 exit()
 
-        # ===== OPCIÓN INVÁLIDA =====
+            else:
+                print(OPCION_INVALIDA)
+                pausa()
+
+        # ===== MENÚ USUARIO NORMAL =====
 
         else:
+
+            print("1. Gestión de contactos")
+            print("2. Cerrar sesión")
+            print("3. Salir")
+
+            opcion = input("\nSeleccione una opción: ")
+
+            # ===== GESTIÓN DE CONTACTOS =====
+
+            if opcion == "1":
+
+                while True:
+
+                    limpiar_pantalla()
+
+                    print("=== GESTIÓN DE CONTACTOS ===")
+
+                    print("1. Registrar contacto")
+                    print("2. Listar contactos")
+                    print("3. Buscar contacto")
+                    print("4. Actualizar contacto")
+                    print("5. Eliminar contacto")
+                    print("6. Volver")
+
+                    opcion_contacto = input("\nSeleccione una opción: ")
+
+                    if opcion_contacto == "1":
+                        registrar_contacto()
+
+                    elif opcion_contacto == "2":
+                        listar_contactos()
+
+                    elif opcion_contacto == "3":
+                        buscar_contacto()
+
+                    elif opcion_contacto == "4":
+                        actualizar_contacto()
+
+                    elif opcion_contacto == "5":
+                        eliminar_contacto()
+
+                    elif opcion_contacto == "6":
+                        break
+
+                    else:
+                        print(OPCION_INVALIDA)
+                        pausa()
+
+            # ===== CERRAR SESIÓN =====
+
+            elif opcion == "2":
+                print("\nCerrando sesión...")
+                pausa()
+                break
+
+            # ===== SALIR =====
+
+            elif opcion == "3":
+                print("\nSaliendo del sistema...")
+                exit()
+
+            else:
                 print(OPCION_INVALIDA)
                 pausa()
