@@ -49,7 +49,7 @@ def listar_contactos():
 
     datos = cargar_datos()
 
-    print("\nLista de contactos")
+    print("Lista de contactos")
     print("-" * 120)
 
     print(
@@ -107,7 +107,7 @@ def buscar_contacto():
         pausa()
         return
 
-    print("\nResultados encontrados")
+    print("Resultados encontrados")
     print("-" * 120)
 
     print(
@@ -238,12 +238,12 @@ def eliminar_contacto():
 
             guardar_datos(datos)
 
-            print("\nContacto eliminado correctamente")
+            print("Contacto eliminado correctamente")
 
         else:
-            print("\nEliminación cancelada")
+            print("Eliminación cancelada")
 
     else:
-        print("\nContacto no encontrado")
+        print("Contacto no encontrado")
 
     pausa()

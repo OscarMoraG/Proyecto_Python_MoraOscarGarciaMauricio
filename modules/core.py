@@ -28,7 +28,7 @@ def menu_principal(usuario):
         print(f"Usuario: {usuario['nombres']} {usuario['apellidos']}")
         print(f"Rol: {usuario['rol']}")
 
-        print("\n--- MENÚ PRINCIPAL ---")
+        print("--- MENÚ PRINCIPAL ---")
 
         # ===== MENÚ ADMIN =====
 
@@ -39,7 +39,7 @@ def menu_principal(usuario):
             print("3. Cerrar sesión")
             print("4. Salir")
 
-            opcion = input("\nSeleccione una opción: ")
+            opcion = input("Seleccione una opción: ")
 
             # ===== GESTIÓN DE USUARIOS =====
 
@@ -57,7 +57,7 @@ def menu_principal(usuario):
                     print("4. Eliminar usuario")
                     print("5. Volver")
 
-                    opcion_usuario = input("\nSeleccione una opción: ")
+                    opcion_usuario = input("Seleccione una opción: ")
 
                     if opcion_usuario == "1":
                         registrar_usuario()
@@ -95,7 +95,7 @@ def menu_principal(usuario):
                     print("5. Eliminar contacto")
                     print("6. Volver")
 
-                    opcion_contacto = input("\nSeleccione una opción: ")
+                    opcion_contacto = input("Seleccione una opción: ")
 
                     if opcion_contacto == "1":
                         registrar_contacto()
@@ -122,14 +122,14 @@ def menu_principal(usuario):
             # ===== CERRAR SESIÓN =====
 
             elif opcion == "3":
-                print("\nCerrando sesión...")
+                print("Cerrando sesión...")
                 pausa()
                 break
 
             # ===== SALIR =====
 
             elif opcion == "4":
-                print("\nSaliendo del sistema...")
+                print("Saliendo del sistema...")
                 exit()
 
             else:
@@ -144,7 +144,7 @@ def menu_principal(usuario):
             print("2. Cerrar sesión")
             print("3. Salir")
 
-            opcion = input("\nSeleccione una opción: ")
+            opcion = input("Seleccione una opción: ")
 
             # ===== GESTIÓN DE CONTACTOS =====
 
@@ -163,7 +163,7 @@ def menu_principal(usuario):
                     print("5. Eliminar contacto")
                     print("6. Volver")
 
-                    opcion_contacto = input("\nSeleccione una opción: ")
+                    opcion_contacto = input("Seleccione una opción: ")
 
                     if opcion_contacto == "1":
                         registrar_contacto()
@@ -190,14 +190,14 @@ def menu_principal(usuario):
             # ===== CERRAR SESIÓN =====
 
             elif opcion == "2":
-                print("\nCerrando sesión...")
+                print("Cerrando sesión...")
                 pausa()
                 break
 
             # ===== SALIR =====
 
             elif opcion == "3":
-                print("\nSaliendo del sistema...")
+                print("Saliendo del sistema...")
                 exit()
 
             else:
