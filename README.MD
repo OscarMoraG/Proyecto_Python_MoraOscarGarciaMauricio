@@ -194,24 +194,5 @@ cantidad de duplicados encontrados
 cantidad total de registros revisados
 
 
-Estructura del proyecto
-Proyecto_Python_MoraOscarGarciaMauricio/
-│
-├── app.py
-│
-├── modules/
-│   ├── core.py
-│   ├── utils.py
-│   ├── messages.py
-│   ├── crud_user.py
-│   ├── crud_contact.py
-│   └── auditoria.py
-│
-├── data/
-│   ├── agenda.json
-│   └── reporte_auditoria_datos.json
-│
-└── README.md
-
 ```plaintext
 data/agenda.json
