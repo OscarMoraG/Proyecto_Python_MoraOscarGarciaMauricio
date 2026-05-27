@@ -1,4 +1,5 @@
 from modules.utils import limpiar_pantalla, pausa
+from modules.auditoria import auditar_datos
 
 from modules.crud_user import (
     registrar_usuario,
@@ -37,7 +38,8 @@ def menu_principal(usuario):
             print("1. Gestión de usuarios")
             print("2. Gestión de contactos")
             print("3. Cerrar sesión")
-            print("4. Salir")
+            print("4. Auditoría de datos")
+            print("5. Salir")
 
             opcion = input("Seleccione una opción: ")
 
@@ -122,13 +124,20 @@ def menu_principal(usuario):
             # ===== CERRAR SESIÓN =====
 
             elif opcion == "3":
+
                 print("Cerrando sesión...")
                 pausa()
                 break
 
+            # ==== AUDITORÍA DE DATOS =====
+                
+            elif opcion == "4":
+                auditar_datos()
+                
+
             # ===== SALIR =====
 
-            elif opcion == "4":
+            elif opcion == "5":
                 print("Saliendo del sistema...")
                 exit()
 

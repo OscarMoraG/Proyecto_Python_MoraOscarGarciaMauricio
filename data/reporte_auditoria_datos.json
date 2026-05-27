@@ -1,0 +1,29 @@
+{
+    "usuarios_con_errores": [
+        {
+            "id": "1092",
+            "email": "yaaaaacme.com",
+            "errores": [
+                "El campo teléfono debe contener solo dígitos",
+                "El campo email debe tener un formato válido"
+            ]
+        }
+    ],
+    "contactos_con_errores": [
+        {
+            "id": "c1",
+            "errores": [
+                "El teléfono debe contener solo dígitos",
+                "Tipo de contacto inválido"
+            ]
+        }
+    ],
+    "resumen": {
+        "total_usuarios": 5,
+        "total_contactos": 2,
+        "usuarios_con_errores": 1,
+        "contactos_con_errores": 1,
+        "usuarios_con_email_duplicado": 0,
+        "contactos_con_id_duplicado": 0
+    }
+}

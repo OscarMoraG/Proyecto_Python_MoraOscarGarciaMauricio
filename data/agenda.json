@@ -4,7 +4,7 @@
             "id": "0000",
             "nombres": "Admin",
             "apellidos": "Administrador",
-            "telefono": "555 000111",
+            "telefono": "555000111",
             "email": "admin@acmesolutions.com",
             "direccion": "Cl 185 # 26 – 85",
             "password": "admin123",
@@ -44,8 +44,8 @@
             "id": "1092",
             "nombres": "freddy",
             "apellidos": "dekg",
-            "telefono": "1233",
-            "email": "fre@acme.com",
+            "telefono": "abc123",
+            "email": "yaaaaacme.com",
             "direccion": "fgf",
             "password": "123456",
             "rol": "user"
@@ -56,10 +56,10 @@
             "id": "c1",
             "nombres": "juan",
             "apellidos": "mora",
-            "telefono": "320",
+            "telefono": "asd320",
             "email": "juan@acme.com",
             "direccion": "carrera 3",
-            "tipo_contacto": "cliente",
+            "tipo_contacto": "otro no definido",
             "notas": "primer contecto de prueba"
         },
         {
